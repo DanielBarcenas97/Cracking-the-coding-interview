@@ -1,0 +1,215 @@
+Notas:
+
+elixirc -->compila  --> Corre en tiempo de compilacion --> Genera archivo .beam
+
+elixir  -->Ejecuta el codigo 
+
+DSL --->  Domain Specifie Language 
+
+"""
+defmodule Program Domain
+    def run
+
+
+"""
+
+Pipe operator
+    Evalua expresiones del lado izquierdo y las pasa hacia la derecha.
+        iex(10)> -5 |> abs |> Integer.to_string |> IO.puts
+        > 5
+
+        -5
+        |>abs
+        |>Integer.to_string
+        |>IO.puts
+
+
+
+String. + TABULADOR  -->Documentacion
+
+Identificar funcion
+Nombre modulo
+Nombre funcion
+Arity  --> numero de argumentos que recibe
+
+defmodule SerieFibo do
+    def fibo (0), do: 0
+    def fibo (1), do: 1
+    def fibo (x), do: fibo(x-1) + fibo (x-2)
+end
+
+
+Default Values
+defmodule 
+( a,b\\2 )
+    ^
+    |
+    
+    b valor default 
+
+
+Alias directive
+#Complete sintaxis
+    alias Mix.Tasks.Doctest
+
+ATOMO --> Nombre y valor es lo mismo.
+ALIAS --> Ayuda a acortar el nombre.
+
+Data types:
+
+div(5,2)
+>2
+
+rem(5,2)
+>1
+
+
+
+Atoms
+:an_atom
+:another_atom
+:"an atom with spaces"
+
+Los booleanos son atomos !!
+
+Nil
+:nil
+
+Tuplas:
+Tuplas -> Conjunto de elementos de diferenres tipos finitos que tienen una posicion 
+    *Posiciones se indexan a parti de 0
+
+
+Listas:
+*Siempre se agregan por la izquierda
+[h | t]
+    *h = elemento
+    *t = lista 
+
+Ejemplo:
+
+l = [1,2,3,4,5]
+
+Patern Matching
+[h | t] = l 
+
+   h=1
+   t=[2,3,4,5]
+
+Longitud --> lenght(l)
+
+
+Operator in
+
+5 in primeNumbers
+>true
+
+Changing Values
+
+List.replace_at(prime_numbers,0,11)
+>[11,2,3,4,7]
+List.insert_at(prime_numbers,4,1)
+>[11,2,3,5,1,7]
+
+
+[1,2,3] ++ [4]
+ 
+
+hd([1,2,3])   --> 1
+tl([1,2,3])   --> 3
+
+1..100
+
+
+
+if and Unless
+
+if 5 > 3, do: :one
+>one
+
+if 5 < 3, do: :one
+>nil
+
+def max(,B) do
+    if a >= b, do:a alse:b
+    end
+
+Case:
+
+def max(a,b) do
+    case a>=b do
+        true -> a
+        false -> b
+    end
+end
+
+
+Cond
+
+def max(a,b) 
+    cond do 
+        a >= b -> a
+        true -> a
+    end
+end
+
+
+Enum.each(1..100, fn x->
+cond do
+rem(x, 3) == 0 and rem(x, 5) == 0 -> IO.puts "FizzBuzz"
+rem(x, 3) == 0 -> IO.puts "Fizz"
+rem(x, 5) == 0 -> IO.puts "Buzz"
+true -> IO.puts x
+end
+end)
+
+
+MAPS:
+
+curso = %{name: "Elixir", price: 18000,horas: 20}
+
+
+ curso[:name]
+ >Elixir
+
+ curso[:non]
+ >nil
+
+ curso.price #debe de ser atomo
+ >18000
+
+
+ #Programing Elixir  1.9
+
+
+
+ Binary String:
+ Concatenacion ->     < >
+
+
+
+
+iex(4)> send(self(), "hola")
+"hola"
+iex(5)> receive do
+...(5)> msg -> {:ok,msg}
+...(5)> end
+{:ok, "hola"}
+iex(6)> 1..10 |> Enum.each(fn _ -> send(self(), "holi") end)
+:ok
+iex(7)> 
+nil
+iex(8)> 1..10 |> Enum.map(fn _ ->
+...(8)>   receive do
+...(8)>     msg -> msg
+...(8)>   end
+...(8)> end)
+["hola", "holi", "holi", "holi", "holi", "holi", "holi", "holi", "holi", "holi"]
+iex(9)> 
+
+
+
+
+
+
+
