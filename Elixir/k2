@@ -1,6 +1,0 @@
-Enum.map([1,2,3],fn x-> x*x  end)  
-
-
-entero mas grande en vim
-
-modificar para que no dependa de los datos !!
